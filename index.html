@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Mode Toggle</title>
+    <style>
+        /* Base styling */
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        h1 {
+            font-size: 2em;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* Light and Dark Mode Styles */
+        body.light {
+            background-color: #ffffff;
+            color: #000000;
+        }
+        body.dark {
+            background-color: #1a1a1a;
+            color: #ffffff;
+        }
+
+        /* Centered Toggle Switch Styling */
+        .toggle-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .toggle {
+            width: 60px;
+            height: 30px;
+            background-color: #ddd;
+            border-radius: 30px;
+            position: relative;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .toggle.dark {
+            background-color: #333;
+        }
+
+        /* Circle (Slider) inside the Toggle */
+        .circle {
+            width: 26px;
+            height: 26px;
+            background-color: #fff;
+            border-radius: 50%;
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            transition: transform 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        /* Icon inside the circle */
+        .circle img {
+            width: 16px;
+            height: 16px;
+        }
+        /* Circle position when in dark mode */
+        .toggle.dark .circle {
+            transform: translateX(30px);
+        }
+    </style>
+</head>
+<body class="light">
+    <div class="toggle-container">
+        <div class="toggle" onclick="toggleMode()">
+            <div class="circle">
+                <!-- Sun/Moon icon changes based on the mode -->
+                <img src="sun.png" class="icon" alt="Toggle Icon">
+            </div>
+        </div>
+    </div>
+    <h1>Click on the Toggle Button</h1>
+
+    <script src="script.js"></script>
+</body>
+</html>
